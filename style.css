@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.hero {
+    position: relative;
+    background-color: #1d4e7d;
+    color: white;
+    padding: 60px 0;
+    overflow: hidden;
+    border-bottom: 4px solid #173f66;
+}
+.hero__circle-bg {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+    pointer-events: none;
+}
+.hero__subtitle {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.hero__title-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+.hero__icon {
+    font-size: 38px;
+}
+.hero__title {
+    font-size: 42px;
+    font-weight: 700;
+}
+.hero__description {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 700px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 25px;
+}
+.hero__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.badge--orange {
+    background-color: #c96525;
+}
+
+
+.search-bar {
+    background: #1d4e7d;
+    padding: 15px 0;
+    margin-top: 2px;
+}
+.search-bar__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+.field {
+    padding: 10px 18px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+.search {
+    width: 300px;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+.search::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+.hidden {
+    display: none;
+}
+
+.filters {
+    padding: 20px 0;
+}
+.filters .container {
+    display: flex;
+    gap: 12px;
+}
+.chip {
+    padding: 10px 22px;
+    border-radius: 25px;
+    border: none;
+    background: #dbeafe;
+    color: #1d4e7d;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.chip:hover {
+    background: #cbd5e1;
+}
+.chip--active {
+    background: #1d4e7d;
+    color: white;
+}
+
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+    padding: 20px 0; 
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    width: 100%;
+    align-items: start; 
+}
+
+
+.restaurant-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+.restaurant-card:hover {
+    transform: translateY(-5px);
+}
+.restaurant-card__image {
+    width: 100%;
+    height: 160px;
+}
+
+.restaurant-card__image--alboom { background-color: #f3c677; }
+.restaurant-card__image--spicehub { background-color: #e49b9b; }
+.restaurant-card__image--bellavia { background-color: #a3c9a8; }
+
+.restaurant-card__body {
+    padding: 20px;
+}
+.restaurant-card__header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; 
+    margin-bottom: 12px;
+}
+.restaurant-card__title {
+    font-size: 22px;
+    font-weight: bold;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.restaurant-card__meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.restaurant-card__cuisine {
+    background: #dbeafe;
+    color: #1d4e7d;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.restaurant-card__rating {
+    color: #e28743;
+    font-weight: bold;
+    font-size: 16px;
+}
+.restaurant-card__fee {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+
+.restaurant-card__status {
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    flex-shrink: 0; 
+}
+.restaurant-card__status--open {
+    background: #d8f3dc;
+    color: green;
+}
+.restaurant-card__status--paused {
+    background: #ffd6d6;
+    color: red;
+}
+
+
+.restaurant-card__footer {
+    margin-top: 10px;
+}
+.button {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+.button--primary {
+    background: #1d4e7d;
+    color: white;
+}
+.button--primary:hover {
+    background: #173f66;
+}
+
+/* =========================
+   Responsive Media Queries
+========================= */
+@media(max-width:768px) {
+    .hero__title { font-size: 32px; }
+    .hero__description { font-size: 14px; }
+    .search-bar__content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .search { width: 100%; }
+    .filters .container { flex-wrap: wrap; }
+}
