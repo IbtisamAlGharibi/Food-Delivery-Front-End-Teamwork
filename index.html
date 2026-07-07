@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeline Eats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero__circle-bg"></div>
+        <div class="container">
+            <p class="hero__subtitle">CODELINE &middot; FRONT-END TEAM TRACK &middot; REFERENCE DESIGN</p>
+            <div class="hero__title-container">
+                <span class="hero__icon" role="img" aria-label="burger">🍔</span>
+                <h1 class="hero__title">Codeline Eats</h1>
+            </div>
+            <p class="hero__description">
+                The four screens your pair is shipping &mdash; Restaurant Browse, Menu & Cart, Order Tracking and Admin Dashboard &mdash; built from one token-driven design system.
+            </p>
+            <div class="hero__badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS Grid / Flexbox</span>
+                <span class="badge">Vanilla JS - fetch()</span>
+                <span class="badge badge--orange">OMR - 3-decimal pricing</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="search-bar">
+        <div class="container search-bar__content">
+            <div class="search-bar__left">
+                <span class="logo__icon">🍔</span>
+                <h2 class="logo">Codeline Eats</h2>
+            </div>
+            
+            <div class="search-bar__center">
+                <label for="restaurant-search" class="hidden">Search Restaurants</label>
+                <input type="text" id="restaurant-search" class="field search" placeholder="🔍 Search restaurants...">
+            </div>
+
+            <div class="search-bar__right">
+                <span class="location-tag">📍Gala</span>
+                <div class="user-avatar">Ga</div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="filters">
+        <div class="container">
+            <button class="chip chip--active">All</button>
+            <button class="chip">Arabic</button>
+            <button class="chip">Indian</button>
+            <button class="chip">Italian</button>
+            <button class="chip">Burgers</button>
+            <button class="chip">Japanese</button>
+            <button class="chip">Healthy</button>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="restaurant-grid">
+            
+            <article class="restaurant-card">
+                <div class="restaurant-card__image restaurant-card__image--alboom">
+                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+                </div>
+                <div class="restaurant-card__body">
+                    <div class="restaurant-card__header-row">
+                        <h2 class="restaurant-card__title">Al Boom</h2>
+                        <span class="restaurant-card__rating">⭐ 4.6</span>
+                    </div>
+                    <div class="restaurant-card__meta-row">
+                        <span class="restaurant-card__cuisine">Arabic</span>
+                    </div>
+                    <p class="restaurant-card__fee">Delivery <strong>0.500</strong> &middot; Min <strong>2.000</strong></p>
+                    <div class="restaurant-card__footer">
+                        <button class="button button--primary">View Menu</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="restaurant-card">
+                <div class="restaurant-card__image restaurant-card__image--spicehub">
+                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+                </div>
+                <div class="restaurant-card__body">
+                    <div class="restaurant-card__header-row">
+                        <h2 class="restaurant-card__title">Spice Hub</h2>
+                        <span class="restaurant-card__rating">⭐ 4.3</span>
+                    </div>
+                    <div class="restaurant-card__meta-row">
+                        <span class="restaurant-card__cuisine">Indian</span>
+                    </div>
+                    <p class="restaurant-card__fee">Delivery <strong>0.300</strong> &middot; Min <strong>1.500</strong></p>
+                    <div class="restaurant-card__footer">
+                        <button class="button button--primary">View Menu</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="restaurant-card">
+                <div class="restaurant-card__image restaurant-card__image--bellavia">
+                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+                </div>
+                <div class="restaurant-card__body">
+                    <div class="restaurant-card__header-row">
+                        <h2 class="restaurant-card__title">Bella Via</h2>
+                        <span class="restaurant-card__rating">⭐ 4.8</span>
+                    </div>
+                    <div class="restaurant-card__meta-row">
+                        <span class="restaurant-card__cuisine">Italian</span>
+                    </div>
+                    <p class="restaurant-card__fee">Delivery <strong>0.700</strong> &middot; Min <strong>3.000</strong></p>
+                    <div class="restaurant-card__footer">
+                        <button class="button button--primary">View Menu</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="restaurant-card">
+                <div class="restaurant-card__image restaurant-card__image--burgeryard">
+                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+                </div>
+                <div class="restaurant-card__body">
+                    <div class="restaurant-card__header-row">
+                        <h2 class="restaurant-card__title">Burger Yard</h2>
+                        <span class="restaurant-card__rating">⭐ 4.1</span>
+                    </div>
+                    <div class="restaurant-card__meta-row">
+                        <span class="restaurant-card__cuisine">Burgers</span>
+                    </div>
+                    <p class="restaurant-card__fee">Delivery <strong>0.400</strong> &middot; Min <strong>2.500</strong></p>
+                    <div class="restaurant-card__footer">
+                        <button class="button button--primary">View Menu</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="restaurant-card">
+                <div class="restaurant-card__image restaurant-card__image--sushisan">
+                    <span class="restaurant-card__status restaurant-card__status--paused">Paused</span>
+                </div>
+                <div class="restaurant-card__body">
+                    <div class="restaurant-card__header-row">
+                        <h2 class="restaurant-card__title">Sushi San</h2>
+                        <span class="restaurant-card__rating">⭐ 4.7</span>
+                    </div>
+                    <div class="restaurant-card__meta-row">
+                        <span class="restaurant-card__cuisine">Japanese</span>
+                    </div>
+                    <p class="restaurant-card__fee">Delivery <strong>0.800</strong> &middot; Min <strong>4.000</strong></p>
+                    <div class="restaurant-card__footer">
+                        <button class="button button--disabled" disabled>Paused</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="restaurant-card">
+                <div class="restaurant-card__image restaurant-card__image--greenbowl">
+                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+                </div>
+                <div class="restaurant-card__body">
+                    <div class="restaurant-card__header-row">
+                        <h2 class="restaurant-card__title">Green Bowl</h2>
+                        <span class="restaurant-card__rating">⭐ 4.4</span>
+                    </div>
+                    <div class="restaurant-card__meta-row">
+                        <span class="restaurant-card__cuisine">Healthy</span>
+                    </div>
+                    <p class="restaurant-card__fee">Delivery <strong>0.500</strong> &middot; Min <strong>1.500</strong></p>
+                    <div class="restaurant-card__footer">
+                        <button class="button button--primary">View Menu</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+</body>
+</html>
