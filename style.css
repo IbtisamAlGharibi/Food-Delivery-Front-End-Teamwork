@@ -266,3 +266,62 @@ body {
     .search { width: 100%; }
     .filters .container { flex-wrap: wrap; }
 }
+.restaurant-card__image--alboom {
+    background: repeating-linear-gradient(
+        135deg,
+        #f7dfc5,
+        #f7dfc5 12px,
+        #f3e7da 12px,
+        #f3e7da 24px
+    );
+}
+
+.restaurant-card__image--spicehub {
+    background: repeating-linear-gradient(
+        135deg,
+        #f2d0cb,
+        #f2d0cb 12px,
+        #f6e3e0 12px,
+        #f6e3e0 24px
+    );
+}
+
+.restaurant-card__image--bellavia {
+    background: repeating-linear-gradient(
+        135deg,
+        #f3d3d0,
+        #f3d3d0 12px,
+        #f7e7e5 12px,
+        #f7e7e5 24px
+    );
+}
+
+.restaurant-card__image--burgeryard {
+    background: repeating-linear-gradient(
+        135deg,
+        #f5e6c8,
+        #f5e6c8 12px,
+        #fbf2df 12px,
+        #fbf2df 24px
+    );
+}
+
+.restaurant-card__image--sushisen {
+    background: repeating-linear-gradient(
+        135deg,
+        #d6f1ea,
+        #d6f1ea 12px,
+        #e8faf6 12px,
+        #e8faf6 24px
+    );
+}
+
+.restaurant-card__image--greenbowl {
+    background: repeating-linear-gradient(
+        135deg,
+        #d9f1d2,
+        #d9f1d2 12px,
+        #edf8ea 12px,
+        #edf8ea 24px
+    );
+}
