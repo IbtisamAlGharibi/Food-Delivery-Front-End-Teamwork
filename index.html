@@ -129,11 +129,89 @@
                     </div>
                 </div>
             </article>
+            <article class="restaurant-card">
+    <div class="restaurant-card__image restaurant-card__image--burgeryard"></div>
+    <div class="restaurant-card__body">
+        <div class="restaurant-card__header-row">
+            <h2 class="restaurant-card__title">Burger Yard</h2>
+            <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+        </div>
+
+        <div class="restaurant-card__meta-row">
+            <span class="restaurant-card__cuisine">Burgers</span>
+            <span class="restaurant-card__rating">★ 4.1</span>
+        </div>
+
+        <p class="restaurant-card__fee">
+            Fee <strong>0.400 OMR</strong>
+            &middot;
+            Min <strong>2.000 OMR</strong>
+        </p>
+
+        <div class="restaurant-card__footer">
+            <a href="menu.html?restaurantId=4" class="button button--primary">
+                View Menu
+            </a>
+        </div>
+    </div>
+</article>
+<article class="restaurant-card">
+    <div class="restaurant-card__image restaurant-card__image--sushisen"></div>
+    <div class="restaurant-card__body">
+        <div class="restaurant-card__header-row">
+            <h2 class="restaurant-card__title">Sushi Sen</h2>
+            <span class="restaurant-card__status restaurant-card__status--paused">Paused</span>
+        </div>
+
+        <div class="restaurant-card__meta-row">
+            <span class="restaurant-card__cuisine">Japanese</span>
+            <span class="restaurant-card__rating">★ 4.7</span>
+        </div>
+
+        <p class="restaurant-card__fee">
+            Fee <strong>0.900 OMR</strong>
+            &middot;
+            Min <strong>4.000 OMR</strong>
+        </p>
+
+        <div class="restaurant-card__footer">
+            <button class="button button--primary" disabled>
+                Paused
+            </button>
+        </div>
+    </div>
+</article>
+<article class="restaurant-card">
+    <div class="restaurant-card__image restaurant-card__image--greenbowl"></div>
+    <div class="restaurant-card__body">
+        <div class="restaurant-card__header-row">
+            <h2 class="restaurant-card__title">Green Bowl</h2>
+            <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+        </div>
+
+        <div class="restaurant-card__meta-row">
+            <span class="restaurant-card__cuisine">Healthy</span>
+            <span class="restaurant-card__rating">★ 4.4</span>
+        </div>
+
+        <p class="restaurant-card__fee">
+            Fee <strong>0.350 OMR</strong>
+            &middot;
+            Min <strong>1.000 OMR</strong>
+        </p>
+
+        <div class="restaurant-card__footer">
+            <a href="menu.html?restaurantId=6" class="button button--primary">
+                View Menu
+            </a>
+        </div>
+    </div>
+</article>
 
         </div>
     </main>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="api.js"></script>
     <script type="module" src="restaurant.js"></script>
 </body>
 </html>
