@@ -412,6 +412,7 @@ body {
     align-items: center;
     color: var(--danger);
 }
+
 .action-link {
     background: transparent;
     border: none;
@@ -420,6 +421,7 @@ body {
     font-weight: 600;
     cursor: pointer;
 }
+
 @media (max-width: 860px) {
     .workspace-grid {
         grid-template-columns: 1fr;
@@ -428,8 +430,3 @@ body {
         position: static;
     }
 }
-Show less
-
-
-
-
