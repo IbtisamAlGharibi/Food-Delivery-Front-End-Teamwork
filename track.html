@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order - Codeline Eats</title>
+    <link rel="stylesheet" href="menuStyle.css">
+</head>
+<body>
+
+    <main class="app-window">
+
+        <div id="tracking-hero-card">
+
+            <header class="restaurant-profile">
+                <button class="btn-back" onclick="window.location.href='index.html'">➔</button>
+
+                <div class="profile-meta">
+                    <h1 id="order-title-label" class="res-title">
+                        Order ORD-XXXX
+                    </h1>
+
+                    <div class="res-sub-bar">
+                        <span id="order-restaurant-subtitle">
+                            Loading order configurations...
+                        </span>
+                    </div>
+                </div>
+            </header>
+
+        </div>
+
+        <div class="cart-box" style="margin-bottom: 32px; padding: 40px 24px;">
+
+            <div class="timeline-container" style="position: relative; padding: 0 40px;">
+
+                <div class="timeline-progress-bar"
+                     style="position:absolute;top:12px;left:40px;right:40px;height:6px;background:#E2E8F0;z-index:1;">
+
+                    <div
+                        id="timeline-fill-line"
+                        class="timeline-progress-bar__fill"
+                        style="width:0%;height:100%;background:var(--brand);transition:width .4s;">
+                    </div>
+
+                </div>
+
+                <div class="timeline-nodes-row"
+                     style="position:relative;display:flex;justify-content:space-between;z-index:2;">
+
+                    <div class="timeline-node"
+                         id="node-PENDING"
+                         style="display:flex;flex-direction:column;align-items:center;width:100px;text-align:center;">
+
+                        <div class="timeline-node__circle"
+                             style="width:28px;height:28px;border-radius:50%;background:var(--surface);border:4px solid #CBD5E1;margin-bottom:8px;transition:.3s;">
+                        </div>
+
+                        <span class="timeline-node__label"
+                              style="font-size:12px;font-weight:700;color:var(--muted);">
+                            PENDING
+                        </span>
+
+                        <span class="timeline-node__time"
+                              id="time-PENDING"
+                              style="font-size:11px;color:var(--muted);margin-top:2px;">
+                            --:--
+                        </span>
+
+                    </div>
+
+                    <div class="timeline-node"
+                         id="node-PREPARING"
+                         style="display:flex;flex-direction:column;align-items:center;width:100px;text-align:center;">
+
+                        <div class="timeline-node__circle"
+                             style="width:28px;height:28px;border-radius:50%;background:var(--surface);border:4px solid #CBD5E1;margin-bottom:8px;transition:.3s;">
+                        </div>
+
+                        <span class="timeline-node__label"
+                              style="font-size:12px;font-weight:700;color:var(--muted);">
+                            PREPARING
+                        </span>
+
+                        <span class="timeline-node__time"
+                              id="time-PREPARING"
+                              style="font-size:11px;color:var(--muted);margin-top:2px;">
+                            --:--
+                        </span>
+
+                    </div>
+
+                    <div class="timeline-node"
+                         id="node-READY"
+                         style="display:flex;flex-direction:column;align-items:center;width:100px;text-align:center;">
+
+                        <div class="timeline-node__circle"
+                             style="width:28px;height:28px;border-radius:50%;background:var(--surface);border:4px solid #CBD5E1;margin-bottom:8px;transition:.3s;">
+                        </div>
+
+                        <span class="timeline-node__label"
+                              style="font-size:12px;font-weight:700;color:var(--muted);">
+                            READY
+                        </span>
+
+                        <span class="timeline-node__time"
+                              id="time-READY"
+                              style="font-size:11px;color:var(--muted);margin-top:2px;">
+                            --:--
+                        </span>
+
+                    </div>
+
+                    <div class="timeline-node"
+                         id="node-DELIVERED"
+                         style="display:flex;flex-direction:column;align-items:center;width:100px;text-align:center;">
+
+                        <div class="timeline-node__circle"
+                             style="width:28px;height:28px;border-radius:50%;background:var(--surface);border:4px solid #CBD5E1;margin-bottom:8px;transition:.3s;">
+                        </div>
+
+                        <span class="timeline-node__label"
+                              style="font-size:12px;font-weight:700;color:var(--muted);">
+                            DELIVERED
+                        </span>
+
+                        <span class="timeline-node__time"
+                              id="time-DELIVERED"
+                              style="font-size:11px;color:var(--muted);margin-top:2px;">
+                            --:--
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="workspace-grid">
+
+            <section class="catalog-panel">
+
+                <div class="catalog-section">
+
+                    <h2 class="section-label">
+                        ITEMS RECEIPT
+                    </h2>
+
+                    <div id="tracking-items-stack" class="menu-rows-stack">
+
+                        <div class="empty-state-notice">
+                            Assembling receipt information fields...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <aside class="cart-panel">
+
+                <div class="cart-box">
+
+                    <div class="cart-box__header">
+
+                        <div class="cart-title-wrapper">
+
+                            <span class="cart-icon">🛵</span>
+
+                            <span class="cart-title-text">
+                                Logistics Profile
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div id="driver-profile-empty" class="empty-state-notice">
+                        Awaiting dispatch routing assignment...
+                    </div>
+
+                    <div id="driver-profile-wrapper"
+                         class="hidden"
+                         style="padding:4px 0 12px;">
+
+                        <div style="display:flex;align-items:center;gap:12px;">
+
+                            <div class="menu-row__thumb"
+                                 style="width:40px;height:40px;">
+                            </div>
+
+                            <div>
+
+                                <h4 id="driver-name"
+                                    style="font-size:14px;font-weight:600;">
+                                    Courier Dispatched
+                                </h4>
+
+                                <span id="driver-id"
+                                      style="font-size:11px;color:var(--muted);">
+                                    ID: --
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <footer class="cart-financials"
+                            style="border-top:1px solid #EDF2F7;padding-top:16px;">
+
+                        <div class="receipt-row">
+
+                            <span class="receipt-row__label">
+                                Est. Delivery
+                            </span>
+
+                            <span id="countdown-clock"
+                                  class="receipt-row__val"
+                                  style="font-weight:700;color:var(--accent);">
+                                --:--
+                            </span>
+
+                        </div>
+
+                        <div class="receipt-row receipt-row--grand-total">
+
+                            <span class="receipt-row__label">
+                                Total Settled
+                            </span>
+
+                            <span id="tracking-grand-total"
+                                  class="receipt-row__val">
+                                0.000 OMR
+                            </span>
+
+                        </div>
+
+                        <div id="order-status-badge"
+                             class="min-order-pill"
+                             style="margin-top:14px;text-transform:uppercase;font-weight:700;">
+
+                            STATUS: CONNECTING
+
+                        </div>
+
+                    </footer>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <script type="module" src="track.js"></script>
+
+</body>
+</html>
