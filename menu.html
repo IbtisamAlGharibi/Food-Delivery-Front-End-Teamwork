@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeline Eats - Menu & Cart</title>
+    <link rel="stylesheet" href="menuStyle.css">
+</head>
+<body>
+
+    <main class="app-window">
+        <header class="restaurant-profile">
+            <button class="btn-back" onclick="window.location.href='index.html'">➔</button>
+            <div class="profile-meta">
+                <h1 id="res-name" class="res-title">Loading Restaurant...</h1>
+                <div class="res-sub-bar">
+                    <span id="res-cuisine">...</span>
+                    <span class="dot-separator">•</span>
+                    <span class="rating-icon">★</span> <span id="res-rating">0.0</span>
+                    <span class="dot-separator">•</span>
+                    <span id="res-eta">-- mins</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="workspace-grid">
+            
+            <section class="catalog-panel">
+                <div id="error-banner" class="error-toast hidden">
+                    <p class="error-toast__msg">Could not load the restaurant menu selection.</p>
+                    <button id="retry-btn" class="action-link">Retry</button>
+                </div>
+
+                <div id="combos-wrapper" class="catalog-section hidden">
+                    <h2 class="section-label">COMBOS</h2>
+                    <div id="combos-grid" class="combos-flex-grid"></div>
+                </div>
+
+                <div id="menu-wrapper" class="catalog-section">
+                    <h2 class="section-label">MENU</h2>
+                    <div id="menu-list" class="menu-rows-stack"></div>
+                </div>
+            </section>
+
+            <aside class="cart-panel">
+                <div class="cart-box">
+                    <div class="cart-box__header">
+                        <div class="cart-title-wrapper">
+                            <span class="cart-icon">🛒</span>
+                            <span class="cart-title-text">Your Cart</span>
+                        </div>
+                        <span id="cart-badge-count" class="cart-counter-badge">0</span>
+                    </div>
+
+                    <div id="cart-items-container" class="cart-scroll-area">
+                        <div id="empty-cart-view" class="empty-state-notice">
+                            Your shopping cart is currently empty.
+                        </div>
+                    </div>
+
+                    <footer class="cart-financials">
+                        <div class="receipt-row">
+                            <span class="receipt-row__label">Subtotal</span>
+                            <span id="bill-subtotal" class="receipt-row__val">0.000</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span class="receipt-row__label">Delivery fee</span>
+                            <span id="bill-delivery" class="receipt-row__val">0.000</span>
+                        </div>
+                        <div class="receipt-row receipt-row--grand-total">
+                            <span class="receipt-row__label">Total</span>
+                            <span id="bill-total" class="receipt-row__val">0.000 OMR</span>
+                        </div>
+
+                        <button id="checkout-cta" class="btn-checkout-submit" disabled>Place Order</button>
+                        <div id="min-order-pill" class="min-order-pill hidden"></div>
+                    </footer>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+    <script type="module" src="api.js"></script>
+    <script type="module" src="menu.js"></script>
+</body>
+</html>

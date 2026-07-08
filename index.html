@@ -30,20 +30,9 @@
 
     <nav class="search-bar">
         <div class="container search-bar__content">
-            <div class="search-bar__left">
-                <span class="logo__icon">🍔</span>
-                <h2 class="logo">Codeline Eats</h2>
-            </div>
-            
-            <div class="search-bar__center">
-                <label for="restaurant-search" class="hidden">Search Restaurants</label>
-                <input type="text" id="restaurant-search" class="field search" placeholder="🔍 Search restaurants...">
-            </div>
-
-            <div class="search-bar__right">
-                <span class="location-tag">📍Gala</span>
-                <div class="user-avatar">Ga</div>
-            </div>
+            <h2 class="logo">Codeline Eats</h2>
+            <label for="restaurant-search" class="hidden">Search Restaurants</label>
+            <input type="text" id="restaurant-search" class="field search" placeholder="search restaurants...">
         </div>
     </nav>
 
@@ -54,130 +43,175 @@
             <button class="chip">Indian</button>
             <button class="chip">Italian</button>
             <button class="chip">Burgers</button>
-            <button class="chip">Japanese</button>
-            <button class="chip">Healthy</button>
         </div>
     </section>
 
     <main class="container">
-        <div class="restaurant-grid">
-            
-            <article class="restaurant-card">
-                <div class="restaurant-card__image restaurant-card__image--alboom">
-                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+
+        <div id="error-banner" class="error-banner hidden">
+            <span class="error-banner__message">Failed to load restaurants from backend.</span>
+            <button id="retry-btn" class="button button--retry">Retry</button>
+        </div>
+
+        <div id="loading-skeletons" class="restaurant-grid hidden">
+            <div class="skeleton-card">
+                <div class="skeleton-card__image animate-pulse"></div>
+                <div class="skeleton-card__body">
+                    <div class="skeleton-card__line skeleton-card__line--title animate-pulse"></div>
+                    <div class="skeleton-card__line skeleton-card__line--meta animate-pulse"></div>
+                    <div class="skeleton-card__line skeleton-card__line--button animate-pulse"></div>
                 </div>
+            </div>
+            <div class="skeleton-card"><div class="skeleton-card__image animate-pulse"></div><div class="skeleton-card__body"><div class="skeleton-card__line skeleton-card__line--title animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--meta animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--button animate-pulse"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-card__image animate-pulse"></div><div class="skeleton-card__body"><div class="skeleton-card__line skeleton-card__line--title animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--meta animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--button animate-pulse"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-card__image animate-pulse"></div><div class="skeleton-card__body"><div class="skeleton-card__line skeleton-card__line--title animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--meta animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--button animate-pulse"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-card__image animate-pulse"></div><div class="skeleton-card__body"><div class="skeleton-card__line skeleton-card__line--title animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--meta animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--button animate-pulse"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-card__image animate-pulse"></div><div class="skeleton-card__body"><div class="skeleton-card__line skeleton-card__line--title animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--meta animate-pulse"></div><div class="skeleton-card__line skeleton-card__line--button animate-pulse"></div></div></div>
+        </div>
+
+        <div id="empty-state" class="empty-state hidden">
+            <span class="empty-state__icon">🔍</span>
+            <p class="empty-state__text">No restaurants match your search</p>
+        </div>
+
+        <div id="restaurants-container" class="restaurant-grid">
+
+            <article class="restaurant-card">
+                <div class="restaurant-card__image restaurant-card__image--alboom"></div>
                 <div class="restaurant-card__body">
                     <div class="restaurant-card__header-row">
                         <h2 class="restaurant-card__title">Al Boom</h2>
-                        <span class="restaurant-card__rating">⭐ 4.6</span>
+                        <span class="restaurant-card__status restaurant-card__status--open">Open</span>
                     </div>
                     <div class="restaurant-card__meta-row">
                         <span class="restaurant-card__cuisine">Arabic</span>
+                        <span class="restaurant-card__rating">★ 4.6</span>
                     </div>
-                    <p class="restaurant-card__fee">Delivery <strong>0.500</strong> &middot; Min <strong>2.000</strong></p>
+                    <p class="restaurant-card__fee">Fee <strong>0.500 OMR</strong> &middot; Min <strong>2.000 OMR</strong></p>
                     <div class="restaurant-card__footer">
-                        <button class="button button--primary">View Menu</button>
+                        <a href="menu.html?restaurantId=1" class="button button--primary">View Menu</a>
                     </div>
                 </div>
             </article>
 
             <article class="restaurant-card">
-                <div class="restaurant-card__image restaurant-card__image--spicehub">
-                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
-                </div>
+                <div class="restaurant-card__image restaurant-card__image--spicehub"></div>
                 <div class="restaurant-card__body">
                     <div class="restaurant-card__header-row">
                         <h2 class="restaurant-card__title">Spice Hub</h2>
-                        <span class="restaurant-card__rating">⭐ 4.3</span>
+                        <span class="restaurant-card__status restaurant-card__status--open">Open</span>
                     </div>
                     <div class="restaurant-card__meta-row">
                         <span class="restaurant-card__cuisine">Indian</span>
+                        <span class="restaurant-card__rating">★ 4.3</span>
                     </div>
-                    <p class="restaurant-card__fee">Delivery <strong>0.300</strong> &middot; Min <strong>1.500</strong></p>
+                    <p class="restaurant-card__fee">Fee <strong>0.300 OMR</strong> &middot; Min <strong>1.500 OMR</strong></p>
                     <div class="restaurant-card__footer">
-                        <button class="button button--primary">View Menu</button>
+                        <a href="menu.html?restaurantId=2" class="button button--primary">View Menu</a>
                     </div>
                 </div>
             </article>
 
             <article class="restaurant-card">
-                <div class="restaurant-card__image restaurant-card__image--bellavia">
-                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
-                </div>
+                <div class="restaurant-card__image restaurant-card__image--bellavia"></div>
                 <div class="restaurant-card__body">
                     <div class="restaurant-card__header-row">
                         <h2 class="restaurant-card__title">Bella Via</h2>
-                        <span class="restaurant-card__rating">⭐ 4.8</span>
+                        <span class="restaurant-card__status restaurant-card__status--paused">Paused</span>
                     </div>
                     <div class="restaurant-card__meta-row">
                         <span class="restaurant-card__cuisine">Italian</span>
+                        <span class="restaurant-card__rating">★ 4.8</span>
                     </div>
-                    <p class="restaurant-card__fee">Delivery <strong>0.700</strong> &middot; Min <strong>3.000</strong></p>
+                    <p class="restaurant-card__fee">Fee <strong>0.700 OMR</strong> &middot; Min <strong>3.000 OMR</strong></p>
                     <div class="restaurant-card__footer">
-                        <button class="button button--primary">View Menu</button>
+                        <button class="button button--primary" disabled>Paused</button>
                     </div>
                 </div>
             </article>
-
             <article class="restaurant-card">
-                <div class="restaurant-card__image restaurant-card__image--burgeryard">
-                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
-                </div>
-                <div class="restaurant-card__body">
-                    <div class="restaurant-card__header-row">
-                        <h2 class="restaurant-card__title">Burger Yard</h2>
-                        <span class="restaurant-card__rating">⭐ 4.1</span>
-                    </div>
-                    <div class="restaurant-card__meta-row">
-                        <span class="restaurant-card__cuisine">Burgers</span>
-                    </div>
-                    <p class="restaurant-card__fee">Delivery <strong>0.400</strong> &middot; Min <strong>2.500</strong></p>
-                    <div class="restaurant-card__footer">
-                        <button class="button button--primary">View Menu</button>
-                    </div>
-                </div>
-            </article>
+    <div class="restaurant-card__image restaurant-card__image--burgeryard"></div>
+    <div class="restaurant-card__body">
+        <div class="restaurant-card__header-row">
+            <h2 class="restaurant-card__title">Burger Yard</h2>
+            <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+        </div>
 
-            <article class="restaurant-card">
-                <div class="restaurant-card__image restaurant-card__image--sushisan">
-                    <span class="restaurant-card__status restaurant-card__status--paused">Paused</span>
-                </div>
-                <div class="restaurant-card__body">
-                    <div class="restaurant-card__header-row">
-                        <h2 class="restaurant-card__title">Sushi San</h2>
-                        <span class="restaurant-card__rating">⭐ 4.7</span>
-                    </div>
-                    <div class="restaurant-card__meta-row">
-                        <span class="restaurant-card__cuisine">Japanese</span>
-                    </div>
-                    <p class="restaurant-card__fee">Delivery <strong>0.800</strong> &middot; Min <strong>4.000</strong></p>
-                    <div class="restaurant-card__footer">
-                        <button class="button button--disabled" disabled>Paused</button>
-                    </div>
-                </div>
-            </article>
+        <div class="restaurant-card__meta-row">
+            <span class="restaurant-card__cuisine">Burgers</span>
+            <span class="restaurant-card__rating">★ 4.1</span>
+        </div>
 
-            <article class="restaurant-card">
-                <div class="restaurant-card__image restaurant-card__image--greenbowl">
-                    <span class="restaurant-card__status restaurant-card__status--open">Open</span>
-                </div>
-                <div class="restaurant-card__body">
-                    <div class="restaurant-card__header-row">
-                        <h2 class="restaurant-card__title">Green Bowl</h2>
-                        <span class="restaurant-card__rating">⭐ 4.4</span>
-                    </div>
-                    <div class="restaurant-card__meta-row">
-                        <span class="restaurant-card__cuisine">Healthy</span>
-                    </div>
-                    <p class="restaurant-card__fee">Delivery <strong>0.500</strong> &middot; Min <strong>1.500</strong></p>
-                    <div class="restaurant-card__footer">
-                        <button class="button button--primary">View Menu</button>
-                    </div>
-                </div>
-            </article>
+        <p class="restaurant-card__fee">
+            Fee <strong>0.400 OMR</strong>
+            &middot;
+            Min <strong>2.000 OMR</strong>
+        </p>
+
+        <div class="restaurant-card__footer">
+            <a href="menu.html?restaurantId=4" class="button button--primary">
+                View Menu
+            </a>
+        </div>
+    </div>
+</article>
+<article class="restaurant-card">
+    <div class="restaurant-card__image restaurant-card__image--sushisen"></div>
+    <div class="restaurant-card__body">
+        <div class="restaurant-card__header-row">
+            <h2 class="restaurant-card__title">Sushi Sen</h2>
+            <span class="restaurant-card__status restaurant-card__status--paused">Paused</span>
+        </div>
+
+        <div class="restaurant-card__meta-row">
+            <span class="restaurant-card__cuisine">Japanese</span>
+            <span class="restaurant-card__rating">★ 4.7</span>
+        </div>
+
+        <p class="restaurant-card__fee">
+            Fee <strong>0.900 OMR</strong>
+            &middot;
+            Min <strong>4.000 OMR</strong>
+        </p>
+
+        <div class="restaurant-card__footer">
+            <button class="button button--primary" disabled>
+                Paused
+            </button>
+        </div>
+    </div>
+</article>
+<article class="restaurant-card">
+    <div class="restaurant-card__image restaurant-card__image--greenbowl"></div>
+    <div class="restaurant-card__body">
+        <div class="restaurant-card__header-row">
+            <h2 class="restaurant-card__title">Green Bowl</h2>
+            <span class="restaurant-card__status restaurant-card__status--open">Open</span>
+        </div>
+
+        <div class="restaurant-card__meta-row">
+            <span class="restaurant-card__cuisine">Healthy</span>
+            <span class="restaurant-card__rating">★ 4.4</span>
+        </div>
+
+        <p class="restaurant-card__fee">
+            Fee <strong>0.350 OMR</strong>
+            &middot;
+            Min <strong>1.000 OMR</strong>
+        </p>
+
+        <div class="restaurant-card__footer">
+            <a href="menu.html?restaurantId=6" class="button button--primary">
+                View Menu
+            </a>
+        </div>
+    </div>
+</article>
 
         </div>
     </main>
 
+    <script type="module" src="api.js"></script>
+    <script type="module" src="restaurant.js"></script>
 </body>
 </html>
