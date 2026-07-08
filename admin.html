@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Codeline Eats</title>
+
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="menuStyle.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<main class="app-window">
+    <header class="restaurant-profile">
+        <div class="profile-meta">
+            <h1 class="res-title">Admin Dashboard</h1>
+            <div class="res-sub-bar">
+                <span>Platform Statistics</span>
+            </div>
+        </div>
+
+        <span id="current-date-pill" class="btn-action-add">
+            Loading...
+        </span>
+    </header>
+
+    <section class="dashboard-summary">
+
+        <div class="cart-box dashboard-card">
+            <p>Total Orders</p>
+            <h2 id="metric-orders">0</h2>
+        </div>
+
+        <div class="cart-box dashboard-card">
+            <p>Revenue</p>
+            <h2 id="metric-revenue">0.000 OMR</h2>
+        </div>
+
+        <div class="cart-box dashboard-card">
+            <p>Average Order</p>
+            <h2 id="metric-avg-basket">0.000 OMR</h2>
+        </div>
+
+        <div class="cart-box dashboard-card">
+            <p>Cancellation Rate</p>
+            <h2 id="metric-cancel-rate">0%</h2>
+        </div>
+
+    </section>
+    <div class="workspace-grid">
+
+        <section class="catalog-panel">
+
+            <div class="catalog-section">
+
+                <h2 class="section-label">BUSIEST HOURS</h2>
+
+                <div class="cart-box chart-box">
+
+                    <canvas id="busiest-hours-chart-canvas"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <aside class="cart-panel">
+
+            <div class="catalog-section">
+
+                <h2 class="section-label">TOP CUSTOMERS</h2>
+
+                <div class="cart-box">
+
+                    <div id="loyalty-table-body" class="menu-rows-stack">
+
+                        <div class="empty-state-notice">
+                            Loading customers...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+    <section class="catalog-section">
+
+        <h2 class="section-label">
+            DRIVER LEADERBOARD
+        </h2>
+
+        <div class="cart-box">
+
+            <div id="driver-table-body" class="menu-rows-stack">
+
+                <div class="empty-state-notice">
+                    Loading drivers...
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
